@@ -12,6 +12,8 @@ function Admin() {
             background: '#F3F4F6',
             display: 'flex',
             height: '100vh',
+            margin: 0,
+            padding: 0,
         }}>
             <Sidebar />
             <Outlet />

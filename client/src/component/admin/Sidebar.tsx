@@ -1,6 +1,8 @@
 import {
     Drawer, List, ListItem, ListItemText, ListItemIcon,
-    Avatar, Typography, Box, ListItemButton
+    Avatar, Typography, Box, ListItemButton,
+    useMediaQuery,
+    Theme
 } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import PeopleIcon from '@mui/icons-material/People';
@@ -17,7 +19,7 @@ const NAVIGATION = [
         icon: <HomeIcon />,
     },
     {
-        segment: 'user-management',
+        segment: 'user_management',
         title: 'User Management',
         icon: <PeopleIcon />,
     },
@@ -25,7 +27,12 @@ const NAVIGATION = [
 
 function Sidebar() {
     const { userInfo } = useContext(AuthContext);
-    const [pathname, setPathname] = useState('/overview');
+    const [pathname, setPathname] = useState('user_management');
+    const isLgOrXl = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'));
+
+    if (!isLgOrXl) {
+        return null;
+    }
 
     return (
         <Drawer

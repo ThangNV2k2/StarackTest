@@ -5,6 +5,9 @@ $text-primary: #111927;
 body {
   font-family: Inter;
   font-size: 14px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .text-primary-color {

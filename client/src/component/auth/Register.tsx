@@ -239,7 +239,6 @@ const Register: React.FC = () => {
                         )}
                     </FormControl>
 
-                    {/* Terms and Conditions Checkbox */}
                     <FormControl fullWidth error={formik.touched.terms && Boolean(formik.errors.terms)}>
                         <FormControlLabel
                             control={
@@ -266,7 +265,6 @@ const Register: React.FC = () => {
                     <Button variant="contained" color="primary" type="submit" sx={{
                         width: "100%",
                         height: "42px",
-                        borderRadius: "12px",
                         textTransform: "none"
                     }}>
                         Register

@@ -191,11 +191,17 @@ const Login: React.FC = () => {
                         <Button variant="contained" color="primary" type="submit"  sx={{
                             width: "100%",
                             height: "42px",
-                            borderRadius: "12px",
                             textTransform: "none"
                         }}>
                             Log in
                         </Button>
+
+                        <Link href="/forgot-password" color="primary" underline="none" sx={{
+                            textAlign: "center",
+                            fontWeight: '500',
+                        }}>
+                            Forgot password?
+                        </Link>
                 </Box>
             </Card>
         </Box>

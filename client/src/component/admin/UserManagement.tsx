@@ -5,9 +5,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthContext";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { UserTable } from "./UserTable";
+import { useNavigate } from "react-router-dom";
 
 export const UserManagement = () => {
-    const { userInfo, logout } = useContext(AuthContext);
+    const { userInfo, changeUserInfo } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     return (
         <Box sx={{
@@ -27,12 +29,16 @@ export const UserManagement = () => {
                         <AvatarIcon
                             variant='circular'
                             name={userInfo?.fullName}
-                            fontSize='16px'
-                            width='25px'
-                            height='25px'
+                            fontSize='20px'
+                            width='30px'
+                            height='30px'
                         />
                         <IconButton>
-                            <ArrowDropDownIcon onClick={logout} sx={{ color: '#b0b0b0', ml: 1 }} />
+                            <ArrowDropDownIcon onClick={() => {
+                                changeUserInfo();
+                                localStorage.removeItem('token');
+                                navigate('/login');
+                            }} sx={{ color: '#b0b0b0', ml: 1 }} />
                         </IconButton>
 
                 </Box>

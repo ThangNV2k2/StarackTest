@@ -36,8 +36,8 @@ const UserDrawer: React.FC<UserDrawerProps> = ({ open, user, onClose }) => {
             </Box>
             <Box sx={{ width: 720 }}>
                 <Tabs value={selectedTab} onChange={handleChangeTab} aria-label="User Tabs">
-                    <Tab label="Overview" />
-                    <Tab label="Logs" />
+                    <Tab label="Overview" sx={{ margin: 0 }} />
+                    <Tab label="Logs" sx={{margin: 0 }} />
                 </Tabs>
 
                 {selectedTab === 0 && <UserOverviewTab user={user} />}

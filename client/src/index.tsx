@@ -46,6 +46,23 @@ const theme = createTheme({
                 },
             },
         },
+        MuiTableCell: {
+            styleOverrides: {
+                stickyHeader: {
+                    backgroundColor: '#F3F4F6',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    textTransform: 'uppercase',
+                },
+            },
+        },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: '12px',
+                },
+            },
+        },
     },
     breakpoints: {
         values: {

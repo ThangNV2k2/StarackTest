@@ -16,9 +16,10 @@ interface CustomChipProps {
     fontsize?: string;
     fontWeight?: number | string;
     borderRadius?: string;
+    height?: string;
 }
 
-export const CustomChip: React.FC<CustomChipProps> = ({ label, variant, fontWeight, fontsize, borderRadius }) => {
+export const CustomChip: React.FC<CustomChipProps> = ({ label, variant, fontWeight, fontsize, borderRadius, height }) => {
     const { background, text } = variantColorMap[variant];
 
     return (
@@ -30,6 +31,8 @@ export const CustomChip: React.FC<CustomChipProps> = ({ label, variant, fontWeig
                 borderRadius: borderRadius ? borderRadius : '12px',
                 fontSize: fontsize ? fontsize : '12px',
                 fontWeight: fontWeight ? fontWeight : 600,
+                lineHeight: 1.5,
+                height: height ? height : '32px',
             }}
         />
     );
