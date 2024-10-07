@@ -9,6 +9,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +41,15 @@ public class UserController {
     ApiResponse<UserResponse> getUserById(@PathVariable String userId) {
         return ApiResponse.<UserResponse>builder()
                 .result(userService.getUserById(userId))
+                .build();
+    }
+
+    @DeleteMapping("/{userId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ApiResponse<String> deleteUser(@PathVariable String userId) {
+        userService.deleteUserById(userId);
+        return ApiResponse.<String>builder()
+                .result("Delete user successfully")
                 .build();
     }
 
